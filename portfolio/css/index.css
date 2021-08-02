@@ -1,0 +1,224 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=Righteous);
+
+html { overflow:hidden }
+body { font:12px/1.6 arial; color:#555; }
+
+#menu { position:fixed; top:50%; transform:translateY(-50%); left:50px; z-index:99 }
+#menu li {  margin:10px 0  }
+#menu li a { display:block; height:20px;  width:20px;
+    border-radius:50%; background-color:red;
+    position:relative 
+}
+#menu li.on a { background-color:blue; transform:scale(1.2) }
+#menu li a span { position:absolute; top:3px; left:30px; 
+    width:100px; display:none; }    
+#menu li.on a span { display:block }
+
+
+section { 
+    width:100vw; 
+    height:100vh; 
+    position:relative;
+    overflow:hidden; 
+}
+
+
+.slideInner { position:relative }
+.slideInner .slide {
+    height:100vh; 
+    background-image:url(../img/space.png);  
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:left;
+    position:relative;
+}
+.slideInner .planet1 {
+    width: 250px;
+    top: 30%; left: 70%;
+    position: absolute;
+    overflow: hidden;
+}
+.slideInner .planet2 {
+    width: 300px;
+    top: 5%; right: 600px;
+    position: absolute;    
+}
+.slideInner .planet3{
+    width: 270px;
+    bottom: 17%; right: 200px;
+    position:absolute
+}
+.slideInner .planet4 {
+    width: 270px; top: 4%; right: 40px;
+    position:absolute
+}
+.slideInner .planet1:hover {
+    transform: scale(1.5);
+    transition: all 1s;
+}
+.slideInner .planet2:hover {
+    transform: scale(1.5);
+    transition: all 1s;
+}
+.slideInner .planet3:hover {
+    transform: scale(1.5);
+    transition: all 1s;
+}
+.slideInner .planet4:hover {
+    transform: scale(1.5);
+    transition: all 1s;
+}
+.slideInner .text1{
+    position: absolute;
+    top: 50%; 
+    color: yellow;
+}
+.slideInner .text2{
+    position: absolute;
+    top: 50%; left: 35px;
+    color: yellow;   
+}
+.slideInner .text3{
+    position: absolute;
+    top:40%;
+    color: yellow;
+}
+.slideInner .text4 {
+    position: absolute;
+    top: 70%; left:20px;
+    color: yellow;
+}
+.slideInner .text { position:absolute;  top:20%;
+    transform:translateY(-50%); left:250px; 
+    font-size:80px;
+    color: #000;
+ }
+.slideInner .text p:nth-child(1) { 
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+}
+.slideInner .text p:nth-child(2) { 
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+}
+
+.slideInner .slick-slide.slick-active .text p:nth-child(1) {
+    animation:fadeInDown 0.5s both 0.6s;
+} 
+.slideInner .slick-slide.slick-active .text p:nth-child(2) {
+    animation:fadeInUp 0.5s both 0.6s;
+}
+
+
+
+
+
+/* 두번째 박스(스킬 그래프) */
+#sect2 {
+    background-image: url(../img/bg2.png);
+    background-repeat:no-repeat;
+    background-position:right;
+    height: 100vh;
+    position:relative;
+}
+.skillContainer { height:100%; text-align:center; padding:8% 0 5% }
+.skillContainer > div {
+    height:90%; 
+    width:80px; margin:0 30px; 
+    border:1px solid #000;
+    display:inline-block; 
+    position:relative;
+}
+.skillContainer > div > p {
+    position:absolute; top:100%; 
+    left:0; font-size:17px; width:100%; 
+    text-align:center; 
+}
+.skillContainer > div > .score {
+    position:absolute; bottom:0; 
+    width:100%; transition:all 0.5s; }
+.skillContainer > div.html > .score { height:0%; background:blue; transition-delay: 0s;}
+.skillContainer > div.css > .score { height:0%; background:green; transition-delay: 0s;}
+.skillContainer > div.script > .score { height:0%; background:orange; transition-delay: 0s;}
+.skillContainer > div.jquery > .score { height:0%; background:pink; transition-delay: 0s;}
+.skillContainer > div.react > .score { height:0%; background:brown; transition-delay: 0s;}
+.skillContainer> div.html.on > .score { height:70%; transition-delay: 0s; }
+.skillContainer> div.css.on > .score { height:60%;  transition-delay: 0.5s;}
+.skillContainer> div.script.on > .score { height:80%; transition-delay: 1s;}
+.skillContainer> div.jquery.on > .score { height:60%; transition-delay: 1.5s; }
+.skillContainer> div.react.on > .score { height:50%;  transition-delay: 2s;}
+
+.skillContainer .myscore {
+    position:absolute; top:10px; 
+    width:100%;
+    text-align:center; 
+    font-size:30px; color:#fff; 
+}
+
+
+
+/* .skillContainer > div {
+    position: relative;
+} */
+.skillContainer .html .stars:hover > p {
+    display:none;
+}
+/* .skillContainer >  > p {
+    position:absolute; right:100%; top:50%; transform:translate(-20px, -50%);
+    font-size:20px; text-align:center; } */
+
+/* 세번째 박스 */
+#sect3 { padding:50px 100px }
+#sect3 .category { font-size:20px; color:#000; margin-bottom:20px }
+#sect3 .category a { background-color:#f00; padding:7px 20px; display:inline-block;  border-radius:5px; margin-right:10px }
+#sect3 ul { overflow:hidden;  }
+#sect3 ul li { float:left; width:23.5%; margin:10px 0;  
+    margin-right:2%; 
+    transform:scale(0.5);
+    opacity:0;
+    transition:all 0.5s;
+    transition-delay:0s;
+}
+#sect3.on ul li {
+    transform:scale(1);
+    opacity:1;
+}
+#sect3.on ul li:nth-child(1) { transition-delay:0s }
+#sect3.on ul li:nth-child(2) { transition-delay:0.2s }
+#sect3.on ul li:nth-child(3) { transition-delay:0.4s }
+#sect3.on ul li:nth-child(4) { transition-delay:0.6s }
+#sect3.on ul li:nth-child(5) { transition-delay:0.8s }
+#sect3.on ul li:nth-child(6) { transition-delay:1.0s }
+#sect3.on ul li:nth-child(7) { transition-delay:1.2s }
+#sect3.on ul li:nth-child(8) { transition-delay:1.4s }
+
+#sect3 ul li:nth-child(4n) { margin-right:0 }
+
+
+
+/* 4번째 구역 */
+#sect4 { padding:200px 300px 100px 300px;
+    background-image:url(../img/bg1.png)
+}
+#sect4 .formbox {
+    opacity:0;
+    transform:translate3d(0, 100%, 0);
+    transition:all 0.5s
+}
+#sect4.on .formbox {
+    opacity:1;
+    transform:translate3d(0, 0%, 0);
+}
+
+#sect4 col:nth-child(1) { width:20% }
+#sect4 col:nth-child(2) { width:80% }
+#sect4 td { padding:10px 5px; font-size:20px; color:#fff }
+#sect4 input[type=text] { width:200px; height:30px; border:1px solid #fff }
+#sect4 textarea { width:500px; height:150px; border:1px solid yellow }
+#sect4 .btn { text-align:center; margin:20px }
+#sect4 button { border:none; border-radius:20px; width:80px; height:50px; font-size:20px; color:#fff }
+#sect4 button[type=submit] { background-color:red }
+#sect4 button[type=reset] { background-color:blue }
